@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dipendente_skill', function (Blueprint $table) {
+        Schema::create('departments', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('dipendente_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('skill_id')->constrained()->cascadeOnDelete();
+            $table->string("name");
+            $table->string("address");
+            $table->string("phone_number")->unique();
+            $table->string("email")->unique();
+            $table->text("description");
 
             $table->timestamps();
         });
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dipendente_skill');
+        Schema::dropIfExists('dipartimenti');
     }
 };

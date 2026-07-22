@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dipartimenti', function (Blueprint $table) {
+        Schema::create('employee_skill', function (Blueprint $table) {
             $table->id();
 
-            $table->string("nome");
-            $table->string("indirizzo");
-            $table->string("telefono")->unique();
-            $table->string("email")->unique();
+            $table->foreignId('employee_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('skill_id')->constrained()->cascadeOnDelete();
 
             $table->timestamps();
         });
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dipartimenti');
+        Schema::dropIfExists('dipendente_skill');
     }
 };

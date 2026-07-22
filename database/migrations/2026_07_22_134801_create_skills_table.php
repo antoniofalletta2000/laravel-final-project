@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
 
-            $table->string("nome");
-            $table->string("colore");
+            $table->string("name");
+            $table->string("color");
 
             $table->timestamps();
         });

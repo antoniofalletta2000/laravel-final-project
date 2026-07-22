@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Dipendente extends Model
+class Employee extends Model
 {
-    public function dipartimento()
+    public function department()
     {
-        return $this->belongsTo(Dipartimento::class);
+        return $this->belongsTo(Department::class);
     }
 
     public function skills()
