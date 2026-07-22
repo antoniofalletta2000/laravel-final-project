@@ -31,10 +31,9 @@ class EmployeeTableSeeder extends Seeder
             $newEmployee->save();
 
             if (!empty($skillIds)) {
-
                 $numberOfSkills = rand(1, 4);
 
-                $randomSkillIds = collect($skillIds)->random(min($numberOfSkills, count($skillIds)))->toArray();
+                $randomSkillIds = collect($skillIds)->shuffle()->take($numberOfSkills)->all();
 
                 $newEmployee->skills()->attach($randomSkillIds);
             }
