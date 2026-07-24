@@ -10,10 +10,10 @@
     <table>
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>Indirizzo</th>
-                <th>Email</th>
-                <th></th>
+                <th class="px-3">Nome</th>
+                <th class="px-3">Indirizzo</th>
+                <th class="px-3">Email</th>
+                <th class="px-3"></th>
             </tr>
 
 
@@ -22,10 +22,10 @@
         <tbody>
             @foreach ($departments as $department)
                 <tr>
-                    <td>{{ $department->name }}</td>
-                    <td>{{ $department->address }}</td>
-                    <td>{{ $department->email}}</td>
-                    <td>
+                    <td class="px-3">{{ $department->name }}</td>
+                    <td class="px-3">{{ $department->address }}</td>
+                    <td class="px-3">{{ $department->email}}</td>
+                    <td class="px-3">
                         <a href="{{ route('departments.show', $department) }}">Visualizza</a>
                     </td>
 

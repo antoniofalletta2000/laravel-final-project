@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +22,12 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource("departments", DepartmentController::class)
+/* ->middleware(['auth', 'verified']) */;
+
+Route::resource("skills", SkillController::class)
+/* ->middleware(['auth', 'verified']) */;
+
+Route::resource("employees", EmployeeController::class)
 /* ->middleware(['auth', 'verified']) */;
 
 

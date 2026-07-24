@@ -3,6 +3,9 @@
 @section('title', 'Crea un nuovo dipartimento')
 
 @section('content')
+    <div class="d-flex justify-content-end">
+        <a href="{{ route('departments.index') }}" class="btn btn-primary">Torna indietro</a>
+    </div>
     <div class="container my-4">
 
         <form action="{{ route('departments.store') }}" method="POST">
