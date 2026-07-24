@@ -44,6 +44,11 @@
             </select>
         </div>
 
+        <div class=" mb-3 d-flex flex-column">
+            <label for="job_title">Posizione Lavorativa</label>
+            <input type="text" name="job_title" id="job_title" value="{{ $employee->job_title }}" required>
+        </div>
+
 
         <div class="form-control mb-3 d-flex flex-column">
             @foreach ($skills as $skill)
@@ -55,15 +60,15 @@
             @endforeach
         </div>
 
-        {{-- <div class="form-control mb-3 d-flex flex-wrap gap-4">
+        <div class="form-control mb-3 d-flex flex-wrap gap-4">
             <label for="image">immagine</label>
             <input id="image" name="image" type="file">
-             @if ($employee->image)
-                <div id="employee_image">
-                    <img class="img-fluid w-25"src="{{ asset('storage/' . $employee->image) }}" alt="immagine del dipendente">
-                </div>
-            @endif
-        </div> --}}
+            <div id="employee_image">
+                <img class="w-25 img-fluid"
+                    src="{{ $employee->image ? asset('storage/' . $employee->image) : asset('images/placeholder.jpg') }}"
+                    alt="{{ $employee->name }}">
+            </div>
+        </div>
 
         <button type="submit" class="btn btn-success">Salva Modifica</button>
         <a href="{{ route('employees.show', $employee) }}" class="btn btn-secondary">Annulla</a>

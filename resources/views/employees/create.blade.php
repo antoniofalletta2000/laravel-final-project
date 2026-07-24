@@ -41,8 +41,14 @@
             </select>
         </div>
 
+        <div class=" mb-3 d-flex flex-column">
+            <label for="job_title">Posizione Lavorativa</label>
+            <input type="text" name="job_title" id="job_title">
+        </div>
+
 
         <div class="form-control mb-3 d-flex flex-column">
+            <p>Skills</p>
             @foreach ($skills as $skill)
                 <div class="skill me-2">
                     <input type="checkbox" name="skills[]" value="{{ $skill->id }}" id="skill-{{ $skill->id }}">

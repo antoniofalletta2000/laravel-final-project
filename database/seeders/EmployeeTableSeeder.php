@@ -16,6 +16,22 @@ class EmployeeTableSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
+        $job_titles = [
+            "Dirigente di Servizio",
+            "Funzionario Amministrativo",
+            "Funzionario Contabile",
+            "Funzionario Tecnico",
+            "Funzionario Legale",
+            "Funzionario Informatico",
+            "Specialista Fondi Europei",
+            "Istruttore Amministrativo",
+            "Istruttore Contabile",
+            "Istruttore Tecnico",
+            "Istruttore Informatico",
+            "Collaboratore Amministrativo",
+            "Addetto al Protocollo",
+            "Responsabile Unico del Procedimento (RUP)"
+        ];
         $departmentIds = Department::pluck('id')->toArray();
         $skillIds = Skill::pluck('id')->toArray();
 
@@ -26,6 +42,7 @@ class EmployeeTableSeeder extends Seeder
             $newEmployee->last_name = $faker->lastName();
             $newEmployee->phone_number = "+39 3" . $faker->unique()->numerify("#########");
             $newEmployee->email = $faker->unique()->email();
+            $newEmployee -> job_title = $faker->randomElement($job_titles);
             $newEmployee->department_id = $faker->randomElement($departmentIds);
 
             $newEmployee->save();

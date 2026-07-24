@@ -7,6 +7,7 @@ use App\Models\Department;
 use App\Models\Employee;
 use App\Models\Skill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EmployeeController extends Controller
 {
@@ -42,7 +43,15 @@ class EmployeeController extends Controller
         $newEmployee->last_name = $data['last_name'];
         $newEmployee->phone_number = $data['phone_number'];
         $newEmployee->email = $data['email'];
+        $newEmployee->job_title = $data['job_title'];
         $newEmployee->department_id = $data['department_id'];
+
+        if (array_key_exists("image", $data)) {
+
+            $img_url = Storage::putFile('employees', $data['image']);
+
+            $newEmployee->image = $img_url;
+        }
 
         $newEmployee->save();
 
@@ -81,9 +90,24 @@ class EmployeeController extends Controller
         $data = $request->all();
 
         $employee->name = $data['name'];
+        $employee->last_name = $data['last_name'];
+        $employee->phone_number = $data['phone_number'];
+        $employee->email = $data['email'];
+        $employee->job_title = $data['job_title'];
         $employee->department_id = $data['department_id'];
 
-        $employee->save();
+        if (array_key_exists('image', $data)) {
+
+            if ($employee->image) {
+                Storage::delete($employee->image);
+            }
+
+            $img_url = Storage::putFile('employees', $data['image']);
+
+            $employee->image = $img_url;
+        }
+
+        $employee->update();
 
         if ($request->has("skills")) {
             $employee->skills()->sync($data["skills"]);
@@ -91,7 +115,7 @@ class EmployeeController extends Controller
             $employee->skills()->detach();
         }
 
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.show', $employee);
     }
 
     /**
