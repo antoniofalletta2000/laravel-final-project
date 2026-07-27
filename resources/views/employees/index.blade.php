@@ -7,7 +7,7 @@
  <div class="d-flex py-4 gap-3">
         <a class="btn btn-outline-primary" href="{{ route('employees.create') }}">Aggiungi un dipendente</a>
     </div>
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th class="px-3">Cognome</th>

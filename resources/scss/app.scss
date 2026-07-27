@@ -1,1 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
+
+.dash_card:hover{
+    transform: scale(1.05);
+    transition-duration:1000ms;
+    box-shadow: 0px 0px 20px 2px rgb(46, 46, 46);
+}
