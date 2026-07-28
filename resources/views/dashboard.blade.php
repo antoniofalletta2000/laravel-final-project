@@ -25,26 +25,26 @@
 
         <div class="row row-cols-1 row-cols-md-3 mt-5 text-center">
 
-            <div class="col">
+            <div class="col p-2">
                 <a class="text-decoration-none"  href="{{ route('departments.index') }}">
-                    <div class="card p-5 dash_card">
-                        <h2>Tabella Dipartimenti</h2>
+                    <div id="dep_card" class="card p-5 dash_card">
+                        <h2 class="text-white">Tabella Dipartimenti</h2>
                     </div>
                 </a>
             </div>
 
-            <div class="col">
+            <div class="col p-2">
                 <a class="text-decoration-none"  href="{{ route('employees.index') }}">
-                    <div class="card p-5 dash_card">
-                        <h2>Tabella Dipendenti</h2>
+                    <div id="emp_card" class="card p-5 dash_card">
+                        <h2 class="text-white">Tabella Dipendenti</h2>
                     </div>
                 </a>
             </div>
 
-            <div class="col">
+            <div class="col p-2">
                 <a class="text-decoration-none" href="{{ route('skills.index') }}">
-                    <div class="card p-5 dash_card">
-                        <h2>Tabella Skills</h2>
+                    <div id="ski_card" class="card p-5 dash_card">
+                        <h2 class="text-white">Tabella Skills</h2>
                     </div>
                 </a>
             </div>

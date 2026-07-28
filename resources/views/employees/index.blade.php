@@ -1,6 +1,6 @@
 @extends("layouts.department")
 
-@section('title', 'Tutti i dipendenti')
+@section('title', 'Tabella dipendenti')
 
 @section('content')
 

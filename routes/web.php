@@ -25,13 +25,13 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource("departments", DepartmentController::class)
-/* ->middleware(['auth', 'verified']) */;
+->middleware(['auth', 'verified']);
 
 Route::resource("skills", SkillController::class)
-/* ->middleware(['auth', 'verified']) */;
+->middleware(['auth', 'verified']);
 
 Route::resource("employees", EmployeeController::class)
-/* ->middleware(['auth', 'verified']) */;
+->middleware(['auth', 'verified']);
 
 
 require __DIR__.'/auth.php';

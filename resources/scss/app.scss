@@ -3,5 +3,28 @@
 .dash_card:hover{
     transform: scale(1.05);
     transition-duration:1000ms;
-    box-shadow: 0px 0px 20px 2px rgb(46, 46, 46);
+}
+
+#dep_card{
+    background-color: rgb(207, 4, 4);
+}
+
+#dep_card:hover{
+    box-shadow: 0px 0px 20px 2px rgb(125, 13, 13);
+}
+
+#emp_card{
+    background-color: rgb(4, 4, 187);
+}
+
+#emp_card:hover{
+    box-shadow: 0px 0px 20px 2px rgb(21, 48, 137);
+}
+
+#ski_card{
+    background-color: rgb(3, 112, 3);
+}
+
+#ski_card:hover{
+    box-shadow: 0px 0px 20px 2px rgb(21, 107, 15);
 }
