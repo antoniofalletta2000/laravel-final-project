@@ -17,6 +17,9 @@ class EmployeeController extends Controller
     public function show(Employee $employee)
     {
         $employee->load('department', 'skills');
+         $employee->image = $employee->image
+        ? asset('storage/' . $employee->image)
+        : asset('images/placeholder.jpg');
         return response()->json($employee);
     }
 }
