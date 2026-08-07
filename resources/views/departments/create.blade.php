@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="d-flex justify-content-end">
-        <a href="{{ route('departments.index') }}" class="btn btn-primary">Torna indietro</a>
+        <a href="{{ route('departments.index') }}" class="btn btn-outline-secondary rounded-pill px-4 shadow-sm">Torna indietro</a>
     </div>
     <div class="container my-4">
 
@@ -21,7 +21,7 @@
                 <input type="text" class="form-control" id="address" name="address">
             </div>
 
-            <div class="d-flex gap-3 mb-3">
+            <div class="d-flex flex-wrap gap-3 mb-3">
                 <div class="flex-fill">
                     <label for="phone_number" class="form-label">Telefono</label>
                     <input type="text" class="form-control" id="phone_number" name="phone_number">
@@ -39,8 +39,12 @@
                 <textarea class="form-control" id="description" name="description" rows="3"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-success">Salva Dipartimento</button>
-            <a href="{{ route('departments.index') }}" class="btn btn-secondary">Annulla</a>
+            <div class="d-flex justify-content-center justify-content-md-end gap-2">
+                <button type="submit" class="btn btn-success">Salva Dipartimento</button>
+                <a href="{{ route('departments.index') }}" class="btn btn-secondary">Annulla</a>
+            </div>
+
+
         </form>
     </div>
 @endsection

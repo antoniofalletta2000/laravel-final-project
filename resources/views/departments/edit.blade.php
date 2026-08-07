@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="d-flex justify-content-end">
-        <a href="{{ route('departments.show', $department) }}" class="btn btn-primary">Torna indietro</a>
+        <a href="{{ route('departments.show', $department) }}" class="btn btn-outline-secondary rounded-pill px-4 shadow-sm">Torna indietro</a>
     </div>
     <div class="container my-4">
 
@@ -43,8 +43,11 @@
                 <textarea class="form-control" id="description" name="description" rows="3" required>{{ $department->description }}</textarea>
             </div>
 
-            <button type="submit" class="btn btn-success">Salva Modifica</button>
-            <a href="{{ route('departments.show', $department) }}" class="btn btn-secondary">Annulla</a>
+            <div class="d-flex justify-content-center justify-content-md-end gap-2">
+                <button type="submit" class="btn btn-success">Salva Modifica</button>
+                <a href="{{ route('departments.show', $department) }}" class="btn btn-secondary">Annulla</a>
+            </div>
+
         </form>
     </div>
 @endsection
