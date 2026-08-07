@@ -1,30 +1,50 @@
 @import '~bootstrap/scss/bootstrap';
 
-.dash_card:hover{
-    transform: scale(1.05);
-    transition-duration:1000ms;
+/* Card Base Dashboard */
+.card.dash_card {
+    border: none;
+    border-radius: 1rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
 }
 
-#dep_card{
-    background-color: rgb(207, 4, 4);
+/* Effetto Hover (Elevazione + ingrandimento leggero) */
+.card.dash_card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
-#dep_card:hover{
-    box-shadow: 0px 0px 20px 2px rgb(125, 13, 13);
+/* Card Dipartimenti - Blu Zaffiro Morbido */
+#dep_card.card.dash_card {
+    background: linear-gradient(135deg, #e01818 0%, #741d1d 100%);
 }
 
-#emp_card{
-    background-color: rgb(4, 4, 187);
+/* Card Dipendenti - Ottanio / Verde Acqua Elegante */
+#emp_card.card.dash_card {
+    background: linear-gradient(135deg, #3a7bd5 0%, #3a6073 100%);
 }
 
-#emp_card:hover{
-    box-shadow: 0px 0px 20px 2px rgb(21, 48, 137);
+/* Card Skills - Viola Polveroso / Indaco Opaco */
+#ski_card.card.dash_card {
+    background: linear-gradient(135deg, #3dc019 0%, #14650d 100%);
 }
 
-#ski_card{
-    background-color: rgb(3, 112, 3);
+/* Stile Testo e Pulsanti interni */
+.dash_card h3 {
+    letter-spacing: -0.3px;
+    font-weight: 700;
 }
 
-#ski_card:hover{
-    box-shadow: 0px 0px 20px 2px rgb(21, 107, 15);
+.dash_card .btn-light {
+    border: none;
+    color: #2c3e50;
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.dash_card:hover .btn-light {
+    background-color: #ffffff;
+    transform: translateY(-1px);
 }

@@ -48,7 +48,13 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             @if (Auth::check())
-                                <a class="dropdown-item" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
+                            <div class="d-flex gap-4">
+                                 <a class="dropdown-item" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
+                                <a class="dropdown-item" href="{{ route('departments.index') }}">{{ __('Dipartimenti') }}</a>
+                                <a class="dropdown-item" href="{{ route('employees.index') }}">{{ __('Dipendenti') }}</a>
+                                <a class="dropdown-item" href="{{ route('skills.index') }}">{{ __('Skills') }}</a>
+                            </div>
+
                             @endif
                         </li>
                     </ul>
