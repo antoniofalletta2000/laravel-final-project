@@ -25,8 +25,8 @@
 
 
                 <div class="col-12 col-md-3 text-center" id="employee_image">
-                    <img class="img-fluid rounded-4 shadow-sm object-fit-cover"
-                         style="width: 140px; height: 140px;"
+                    <img id="img_emp" class="img-fluid rounded-4 shadow-sm object-fit-cover"
+                         
                          src="{{ $employee->image ? asset('storage/' . $employee->image) : asset('images/placeholder.jpg') }}"
                          alt="{{ $employee->name }}">
                 </div>
