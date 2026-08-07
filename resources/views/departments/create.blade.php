@@ -3,48 +3,82 @@
 @section('title', 'Crea un nuovo dipartimento')
 
 @section('content')
-    <div class="d-flex justify-content-end">
-        <a href="{{ route('departments.index') }}" class="btn btn-outline-secondary rounded-pill px-4 shadow-sm">Torna indietro</a>
-    </div>
-    <div class="container my-4">
+    <div class="container-fluid py-3 py-md-4">
 
-        <form action="{{ route('departments.store') }}" method="POST">
-            @csrf
-
-            <div class="mb-3">
-                <label for="name" class="form-label">Nome Dipartimento</label>
-                <input type="text" class="form-field form-control" id="name" name="name" required>
+        
+        <div class="d-flex flex-column-reverse flex-sm-row justify-content-between align-items-sm-center gap-3 mb-4">
+            <div>
+                <h2 class="fw-bold text-dark mb-0 h3">Crea un Nuovo Dipartimento</h2>
+                <p class="text-muted small mb-0">Inserisci i dettagli per registrare una nuova struttura dell'ente</p>
             </div>
-
-            <div class="mb-3">
-                <label for="address" class="form-label">Indirizzo</label>
-                <input type="text" class="form-control" id="address" name="address">
+            <div>
+                <a href="{{ route('departments.index') }}"
+                    class="btn btn-outline-secondary rounded-pill px-4 shadow-sm w-100 w-sm-auto">
+                    Torna indietro
+                </a>
             </div>
+        </div>
 
-            <div class="d-flex flex-wrap gap-3 mb-3">
-                <div class="flex-fill">
-                    <label for="phone_number" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" id="phone_number" name="phone_number">
-                </div>
 
-                <div class="flex-fill">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email">
-                </div>
+        <div class="card shadow-sm border-0 rounded-4 mb-4">
+            <div class="card-body p-4">
+
+                <form action="{{ route('departments.store') }}" method="POST">
+                    @csrf
+
+                    <div class="row g-3">
+
+
+                        <div class="col-12">
+                            <label for="name" class="form-label fw-semibold text-dark">Nome Dipartimento</label>
+                            <input type="text" class="form-field form-control rounded-3" id="name" name="name"
+                                placeholder="Es. Dipartimento dell'Ambiente" required>
+                        </div>
+
+
+                        <div class="col-12">
+                            <label for="address" class="form-label fw-semibold text-dark">Indirizzo</label>
+                            <input type="text" class="form-control rounded-3" id="address" name="address"
+                                placeholder="Es. Via Roma 123, Palermo">
+                        </div>
+
+
+                        <div class="col-12 col-md-6">
+                            <label for="phone_number" class="form-label fw-semibold text-dark">Telefono</label>
+                            <input type="text" class="form-control rounded-3" id="phone_number" name="phone_number"
+                                placeholder="Es. 091 1234567">
+                        </div>
+
+
+                        <div class="col-12 col-md-6">
+                            <label for="email" class="form-label fw-semibold text-dark">Email</label>
+                            <input type="email" class="form-control rounded-3" id="email" name="email"
+                                placeholder="Es. dipartimento@regione.sicilia.it">
+                        </div>
+
+
+                        <div class="col-12">
+                            <label for="description" class="form-label fw-semibold text-dark">Descrizione</label>
+                            <textarea class="form-control rounded-3" id="description" name="description" rows="3"
+                                placeholder="Breve descrizione delle attività del dipartimento..."></textarea>
+                        </div>
+
+                    </div>
+
+                    <hr class="my-4 border-secondary-subtle">
+
+
+                    <div class="d-flex flex-wrap justify-content-center justify-content-md-end gap-2">
+                        <button type="submit" class="btn btn-success rounded-pill px-4 fw-semibold">Salva
+                            Dipartimento</button>
+                        <a href="{{ route('departments.index') }}" class="btn btn-light rounded-pill px-4">Annulla</a>
+
+                    </div>
+
+                </form>
+
             </div>
+        </div>
 
-
-            <div class="mb-3">
-                <label for="description" class="form-label">Descrizione</label>
-                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-            </div>
-
-            <div class="d-flex justify-content-center justify-content-md-end gap-2">
-                <button type="submit" class="btn btn-success">Salva Dipartimento</button>
-                <a href="{{ route('departments.index') }}" class="btn btn-secondary">Annulla</a>
-            </div>
-
-
-        </form>
     </div>
 @endsection
